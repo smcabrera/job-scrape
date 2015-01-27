@@ -1,4 +1,8 @@
 require 'mechanize'
+require 'time'
+require 'date'
+
+#todo: Change this to WeWorkRemotelyScraper when we have more scrapers for now let's just leave it since it's the only one
 
 class Scraper
   BASE_URL = "https://weworkremotely.com"

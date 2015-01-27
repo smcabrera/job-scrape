@@ -6,8 +6,6 @@ gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -37,4 +35,21 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use pry as rails console
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
+
+# Use mechanize to do the web scraping
+gem 'mechanize'
+
+# Bootstrap for easy styling
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '>= 3.2'
+gem 'autoprefixer-rails'
+
 

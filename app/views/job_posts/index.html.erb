@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Job Posts</h1>
+
+  <h3>From weworkremotely.com</h3>
+  <br />
+  <div class="container">
+    <table class="table">
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Date</th>
+      </tr>
+      <% @job_posts.each do |job| %>
+        <tr>
+          <td>
+         <%= form_tag %>
+           <%= check_box_tag(:finished) %>
+
+          </td>
+          <td><a href="<%= job.url %>"><%= job.title %></a></td>
+          <td><%= job.company %></td>
+          <td><%= job.date_posted %></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </div>
+</div>
