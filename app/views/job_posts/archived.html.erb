@@ -22,7 +22,7 @@
           <td><a href="<%= job.url %>"><%= job.title %></a></td>
           <td><%= job.company %></td>
           <td>
-            <%= link_to "delete", job, method: :delete, class: "btn btn-danger" %>
+            <%= link_to "restore", restore_job_post_path(job), method: :patch, class: "btn btn-primary" %>
           </td>
         </tr>
       <% end %>

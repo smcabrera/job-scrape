@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'mechanize'
+gem 'nav_lynx'
 gem 'paranoia', '~> 2.1.0'
 gem 'pry', group: :development
 gem 'pry-rails', group: :development
