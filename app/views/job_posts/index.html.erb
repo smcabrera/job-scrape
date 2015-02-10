@@ -9,7 +9,7 @@
         <th></th>
         <th>Title</th>
         <th>Company</th>
-        <th>Date</th>
+        <th></th>
       </tr>
       <% @job_posts.each do |job| %>
         <tr>
@@ -19,7 +19,9 @@
           </td>
           <td><a href="<%= job.url %>"><%= job.title %></a></td>
           <td><%= job.company %></td>
-          <td><%= job.date_posted %></td>
+          <td>
+            <%= link_to "delete", job, method: :delete %>
+          </td>
         </tr>
       <% end %>
 
