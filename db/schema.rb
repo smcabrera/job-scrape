@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125041847) do
+ActiveRecord::Schema.define(version: 20150210001118) do
 
   create_table "job_posts", force: true do |t|
     t.string   "title"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20150125041847) do
     t.date     "date_posted"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "job_posts", ["deleted_at"], name: "index_job_posts_on_deleted_at"
 
 end
