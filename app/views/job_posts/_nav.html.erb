@@ -1,0 +1,15 @@
+<ul class="nav nav-pills">
+  <li role="presentation">
+    <%= nav_link_to "Jobs", job_posts_path, {}, {:wrapper => 'li', :selected_class => 'active'} %>
+  </li>
+
+  <li role="presentation">
+    <%= nav_link_to "Archived", job_posts_archived_path, {}, {:wrapper => 'li', :selected_class => 'active'} %>
+  </li>
+
+  <li role="presentation">
+    <%= nav_link_to "Scrape!", job_posts_scrape_path, {}, {:wrapper => 'li', :selected_class => 'active'} %>
+  </li>
+
+</ul>
+
