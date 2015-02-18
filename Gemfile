@@ -5,6 +5,7 @@ gem 'better_errors', group: :development
 gem 'binding_of_caller', group: :development
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'jazz_fingers', group: :development
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'mechanize'
