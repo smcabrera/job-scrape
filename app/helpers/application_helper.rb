@@ -42,7 +42,7 @@ module ApplicationHelper
       return Date.new(year_string, month_number_string, day_string)
     end
 
-    def fetch_jobs
+    def pull_jobs
       job_list = []
       job_link_list = self.get_job_links_list
       job_link_list.each do |job_link|

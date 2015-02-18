@@ -1,7 +1,14 @@
 class JobPostsController < ApplicationController
-  def fetch
-    scraper = Application::Helper::Scraper.new
-    scraper.fetch_jobs
+
+  def scrape
+    scraper = ApplicationHelper::Scraper.new
+    if scraper.pull_jobs
+      flash.now[:notice] = "Jobs successfully pulled from job sites."
+      redirect_to job_posts_path
+    else
+      flash.now[:error] = "There was a problem scraping the job sites. Please try again."
+      redirect_to job_posts_path
+    end
   end
 
   def index
