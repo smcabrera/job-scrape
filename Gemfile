@@ -11,8 +11,6 @@ gem 'jquery-rails'
 gem 'mechanize'
 gem 'nav_lynx'
 gem 'paranoia', '~> 2.1.0'
-gem 'pry', group: :development
-gem 'pry-rails', group: :development
 gem 'rails', '4.1.7'
 gem 'sass-rails', '>= 3.2'
 gem 'sdoc', '~> 0.4.0',          group: :doc
