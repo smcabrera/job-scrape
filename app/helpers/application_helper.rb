@@ -4,6 +4,15 @@ module ApplicationHelper
     require 'date'
     BASE_URL = "https://weworkremotely.com"
 
+    def pull_jobs
+      job_list = []
+      job_link_list = self.get_job_links_list
+      job_link_list.each do |job_link|
+        job_list << self.construct_job(job_link)
+      end
+      job_list
+    end
+
     def get_job_links_list
       page = Mechanize.new.get("#{BASE_URL}/categories/2/jobs")
       job_links = page.links.select { |link| link.href.match(/^.jobs.\d*$/) }
@@ -40,15 +49,6 @@ module ApplicationHelper
       day_string = date_string[4..date_string.length]
       puts "#{year_string}-#{month_number_string}-#{day_string}"
       return Date.new(year_string, month_number_string, day_string)
-    end
-
-    def pull_jobs
-      job_list = []
-      job_link_list = self.get_job_links_list
-      job_link_list.each do |job_link|
-        job_list << self.construct_job(job_link)
-      end
-      job_list
     end
   end
 end

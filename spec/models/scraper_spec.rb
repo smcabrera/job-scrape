@@ -1,0 +1,13 @@
+require 'rails_helper'
+require 'application_helper'
+
+describe Scraper do
+  describe '#pull_jobs' do
+    it "returns an array of JobPost objects" do
+      JobPost.all.each { |job| job.delete  }
+      scraper = Scraper.new
+      job_list = scraper.pull_jobs
+      expect(job_list[0]).to be(true)
+    end
+  end
+end
