@@ -3,11 +3,10 @@ require 'rails_helper'
 RSpec.describe JobPostsController, :type => :controller do
   describe '#scrape' do
     it 'Scrapes the weworkremotely website for new jobs' do
-      jobs = JobPost.all
-      expect( jobs[0] ).to be_nil
+      expect( JobPost.all[0] ).to be_nil
       post :scrape
 
-      expect( jobs[0] ).not_to be_nil
+      expect( JobPost.all[0] ).not_to be_nil
     end
   end
 
