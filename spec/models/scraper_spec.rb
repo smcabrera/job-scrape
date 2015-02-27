@@ -3,7 +3,7 @@ require 'application_helper'
 
 describe Scraper do
   describe '#pull_jobs' do
-    it "returns an array of JobPost objects" do
+    xit "returns an array of JobPost objects" do
       JobPost.all.each { |job| job.delete  }
       scraper = Scraper.new
       job_list = scraper.pull_jobs
