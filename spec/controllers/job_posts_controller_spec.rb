@@ -30,6 +30,7 @@ RSpec.describe JobPostsController, :type => :controller do
       get :index
       @job_posts
     end
+  end
 
     xit 'does not list job posts that have been marked as archived' do
   end
@@ -48,11 +49,11 @@ RSpec.describe JobPostsController, :type => :controller do
 
   describe '#restore' do
     xit 'Takes archived job post and marks it as not archived' do
-      # Do stuff
     end
   end
 
   describe '#destroy' do
-    xit 'Marks the job post as archived'
+    xit 'Marks the job post as archived' do
+    end
   end
 end
