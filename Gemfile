@@ -20,7 +20,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'jazz_fingers'
   gem 'rspec-rails', '~> 3.0', group: :test
-  gem 'spring'
+  gem 'spring', '~> 1.2.0'
 end
 
 group :test do

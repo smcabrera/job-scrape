@@ -2,7 +2,9 @@ class Scraper
   require 'time'
   require 'date'
   BASE_URL = "https://weworkremotely.com"
+end
 
+class WeWorkRemotelyScraper < Scraper
   def pull_jobs
     job_list = []
     job_link_list = self.get_job_links_list
@@ -18,6 +20,16 @@ class Scraper
     job_links
   end
 
+  def construct_job(job_link)
+    job_data, job_url = extract_job_data(job_link), extract_job_url(job_link)
+    new_job = JobPost.new(title: job_data[:title], company: job_data[:company], url: job_url, date_posted: job_data[:date_posted])
+    if JobPost.find_by_url(job_url)
+      puts "Job already in the database"
+    else
+      new_job.save
+    end
+  end
+
   def extract_job_data(job_link)
     job_string = job_link.to_s
     job_array = job_string.split("\n")
@@ -28,16 +40,6 @@ class Scraper
 
   def extract_job_url(job_link)
     BASE_URL + job_link.href
-  end
-
-  def construct_job(job_link)
-    job_data, job_url = extract_job_data(job_link), extract_job_url(job_link)
-    new_job = JobPost.new(title: job_data[:title], company: job_data[:company], url: job_url, date_posted: job_data[:date_posted])
-    if JobPost.find_by_url(job_url)
-      puts "Job already in the database"
-    else
-      new_job.save
-    end
   end
 
   def fix_date(date_string)
