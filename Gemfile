@@ -21,6 +21,7 @@ group :development do
   gem 'jazz_fingers'
   gem 'rspec-rails', '~> 3.0', group: :test
   gem 'spring', '~> 1.2.0'
+  gem 'quiet_assets', group: :development
 end
 
 group :test do
