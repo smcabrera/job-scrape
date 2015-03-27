@@ -25,17 +25,19 @@ class JobPostsController < ApplicationController
   end
 
   def restore
-    #JobPost.unscoped { super }
     @job_post = JobPost.with_deleted.find(params[:id])
 
-    if JobPost.with_deleted.find(@job_post.id).restore
-      flash[:notice] = "Job post was archived. Check in the archive to restore the post"
-      redirect_to job_posts_archived_path
+    if @job_post.restore
+      flash[:notice] = "Job post was restored. Check your inbox. It should be back."
     else
-      flash[:error] = "There was a problem deleting this job post. Please try again."
-      redirect_to job_posts_archived_path
+      flash[:error] = "There was a problem restoring this job post. Please try again."
     end
-    @job_post = params[:id]
+    #@job_post = params[:id] # todo: What the hell is this doing here?
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def destroy

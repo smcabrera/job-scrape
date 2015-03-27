@@ -13,7 +13,7 @@
         <th></th>
       </tr>
       <% @job_posts.each do |job| %>
-        <tr>
+        <tr id="job_post-<%= job.id %>">
           <td>
          <%= form_tag %>
            <%= check_box_tag(:finished) %>
@@ -21,7 +21,8 @@
           <td><a href="<%= job.url %>"><%= job.title %></a></td>
           <td><%= job.company %></td>
           <td>
-            <%= link_to "restore", restore_job_post_path(job), method: :patch, class: "btn btn-primary" %>
+            <%= link_to "archive", job, method: :delete, remote: true, class: "btn btn-danger" %>
+            <%= link_to "restore", restore_job_post_path(job), remote: true, method: :patch, class: "btn btn-primary" %>
           </td>
         </tr>
       <% end %>
