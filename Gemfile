@@ -22,6 +22,7 @@ group :development do
   gem 'rspec-rails', '~> 3.0', group: :test
   gem 'spring', '~> 1.2.0'
   gem 'quiet_assets', group: :development
+  gem 'guard-rspec', require: false
 end
 
 group :test do
