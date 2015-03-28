@@ -15,7 +15,8 @@
         <tr id="job_post-<%= job.id %>">
           <td>
          <%= form_tag %>
-           <%= check_box_tag(:finished) %>
+           <%= check_box_tag :finished %>
+
           </td>
           <td><a href="<%= job.url %>"><%= job.title %></a></td>
           <td><%= job.company %></td>
