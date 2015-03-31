@@ -48,3 +48,5 @@ end
 
 #Details here: http://www.elabs.se/blog/60-introducing-capybara-2-1
 
+
+gem 'database_cleaner', '1.4.1'
