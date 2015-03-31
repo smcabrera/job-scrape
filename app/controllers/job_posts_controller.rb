@@ -1,7 +1,7 @@
 class JobPostsController < ApplicationController
 
   def scrape
-    scraper = ApplicationHelper::Scraper.new
+    scraper = Scraper.new
     if scraper.pull_jobs
       flash.now[:notice] = "Jobs successfully pulled from job sites."
       redirect_to job_posts_path
