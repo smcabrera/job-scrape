@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'application_helper'
+require 'pry'
 
 describe Scraper do
   describe '#fetch_jobs' do
@@ -8,20 +9,17 @@ describe Scraper do
       job_links = []
       job_links << instance_double('Mechanize::Page::Link', 'link1')
       job_links << instance_double('Mechanize::Page::Link', 'link2')
-      attributes = {
-        :url => 'jobsite.com/jobs/1',
-        :company => 'ABC Company',
-        :title => 'Designer'
-      }
-      job_post = instance_double("JobPost")
-      url = "https://weworkremotely.com/categories/2/jobs"
-      rxmatcher = /^.jobs.\d*$/
-      scraper = Scraper.new(url, rxmatcher)
-      allow(scraper).to receive(:find_job_links)
+      scraper = Scraper.new('url', 'rxmatcher')
+      allow(scraper).to receive(:find_job_links) do
+        job_links
+      end
+
+      binding.pry
+
       # Exercise
       scraper.fetch_jobs
 
-        # Verify
+      # Verify
 
 
       #expect(scraper).to receive_messages(

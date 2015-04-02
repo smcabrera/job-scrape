@@ -29,6 +29,13 @@ class Scraper
     end
   end
 
+  def extract_job_data(job_link)
+    job_array = job_link.to_s.split("\n")
+    job_array.map! { |job| job.strip }
+    job_array.delete_if { |item| item == "" }
+    {:company => job_array[0], :title => job_array[1], :date_posted => job_array[2], :url  => (BASE_URL + job_link.href) }
+  end
+
   def parse_link(job_link)
     job_string = job_link.to_s
     job_array = job_string.split("\n")
