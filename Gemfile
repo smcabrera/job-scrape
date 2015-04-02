@@ -50,3 +50,5 @@ end
 #Details here: http://www.elabs.se/blog/60-introducing-capybara-2-1
 
 
+
+gem 'upton', '0.3.3'
