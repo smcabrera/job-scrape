@@ -3,9 +3,10 @@ source 'https://rubygems.org'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'database_cleaner', '1.4.1'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails', '~> 4.0.3'
-gem 'mechanize', '~> 2.7.3'
+gem 'metainspector', '4.4.1'
 gem 'nav_lynx', '~> 1.1.1'
 gem 'paranoia', '~> 2.1.0'
 gem 'rails', '~> 4.2.0'
@@ -49,4 +50,3 @@ end
 #Details here: http://www.elabs.se/blog/60-introducing-capybara-2-1
 
 
-gem 'database_cleaner', '1.4.1'
