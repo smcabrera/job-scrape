@@ -1,8 +1,9 @@
 class JobPostsController < ApplicationController
 
   def scrape
-    scraper = Scraper.new
-    if scraper.pull_jobs
+    scraper = Scraper.new("https://weworkremotely.com/categories/2/jobs", /^.jobs.\d*$/)
+
+    if scraper.fetch_jobs()
       flash.now[:notice] = "Jobs successfully pulled from job sites."
       redirect_to job_posts_path
     else

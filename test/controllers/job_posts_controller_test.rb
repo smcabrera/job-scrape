@@ -5,5 +5,4 @@ class JobPostControllerTest < ActionController::TestCase
     get :fetch
     assert_response :success
   end
-
 end
