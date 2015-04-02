@@ -14,6 +14,14 @@ describe Scraper do
         job_links
       end
 
+      allow(scraper).to receive(:parse_link) do
+        'return value'
+      end
+
+        allow(scraper).to receive(:construct_job) do
+        'return value'
+      end
+
       binding.pry
 
       # Exercise
