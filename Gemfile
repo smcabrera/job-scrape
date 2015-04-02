@@ -50,3 +50,4 @@ end
 
 
 gem 'database_cleaner', '1.4.1'
+gem 'fakeweb', '1.3.0'
