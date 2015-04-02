@@ -1,7 +1,9 @@
 class JobPostsController < ApplicationController
 
   def scrape
-    scraper = Scraper.new("https://weworkremotely.com/categories/2/jobs", /^.jobs.\d*$/)
+    url = 'weworkremotely.com'
+    matcher = /^.*\/jobs.\d*$/
+    scraper = Scraper.new(url, matcher)
 
     if scraper.fetch_jobs()
       flash.now[:notice] = "Jobs successfully pulled from job sites."
