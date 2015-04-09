@@ -51,3 +51,4 @@ end
 
 
 gem 'database_cleaner', '1.4.1'
+gem 'devise', '3.4.1'
