@@ -1,0 +1,5 @@
+<% if @job_post.restore %>
+  $('#job_post-' + '<%= @job_post.id %>').hide();
+<% else %>
+  $('#job_post-' + '<%= @job_post.id %>').addClass('danger');
+<% end %>
