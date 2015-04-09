@@ -1,4 +1,4 @@
-class Scraper
+class WeWorkRemotelyScraper
   require 'time'
   require 'date'
   BASE_URL = "https://weworkremotely.com"

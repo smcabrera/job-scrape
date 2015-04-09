@@ -18,7 +18,7 @@ describe Scraper do
         'return value'
       end
 
-        allow(scraper).to receive(:construct_job) do
+      allow(scraper).to receive(:construct_job) do
         'return value'
       end
 
